@@ -1,0 +1,3 @@
+[submodule "dependencies/cbsw-unit"]
+	path = dependencies/cbsw-unit
+	url = git@github.com:CBSW-Dev/cbsw-unit.git

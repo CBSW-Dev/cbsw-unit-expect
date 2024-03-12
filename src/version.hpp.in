@@ -1,0 +1,20 @@
+#pragma once
+
+#include <cstdint>
+
+namespace CBSW::Unit::Expect {
+    class Version {
+    public:
+        static constexpr std::uint16_t major() {
+            return @CBSW_Unit_Expect_VERSION_MAJOR@;
+        }
+
+        static constexpr std::uint16_t minor() {
+            return @CBSW_Unit_Expect_VERSION_MINOR@;
+        }
+
+        static constexpr std::uint16_t revision() {
+            return @CBSW_Unit_Expect_VERSION_PATCH@;
+        }
+    };
+}
