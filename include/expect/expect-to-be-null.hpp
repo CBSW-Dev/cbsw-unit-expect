@@ -14,9 +14,7 @@ namespace CBSW::Unit::Expect::Internal {
             static std::string build(const TActual& actual) {
                 std::stringstream ss;
                 ss << Stream<TActual, std::stringstream>(actual);
-                ss << " is";
-                ss << TLogic::inverseString;
-                ss << " nullable";
+                ss << " is not nullable";
 
                 return ss.str();
             }
