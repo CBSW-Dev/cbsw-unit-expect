@@ -6,6 +6,7 @@
 #include "expect-to-be-greater-than-or-equal.hpp"
 #include "expect-to-be-less-than.hpp"
 #include "expect-to-be-less-than-or-equal.hpp"
+#include "expect-to-be-null.hpp"
 
 
 namespace CBSW::Unit::Expect::Internal {
@@ -29,6 +30,10 @@ namespace CBSW::Unit::Expect::Internal {
 
         template <class TExpected> void lessThanOrEqualTo(const TExpected& expected) {
             return ToBeLessThanOrEqual<TActual, TExpected, TLogic>::run(_info, expected);
+        }
+
+        void null() {
+            return ToBeNull<TActual, TLogic>::run(_info);
         }
     private:
         const Info<TActual>& _info;

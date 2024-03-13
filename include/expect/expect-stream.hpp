@@ -37,6 +37,30 @@ namespace CBSW::Unit::Expect::Internal {
         }
     };
 
+    template <class T, class TStream> class Stream_SFINAE_1<T, TStream, std::enable_if_t<std::is_same_v<char*, std::remove_cv_t<T>>>> {
+    public:
+        static TStream& stream(TStream& stream, const char* value) noexcept {
+            stream << '\"' << value << '\"';
+            return stream;
+        }
+    };
+
+    template <class T, class TStream> class Stream_SFINAE_1<T, TStream, std::enable_if_t<std::is_array_v<T> && std::is_same_v<char, std::remove_extent_t<T>>>> {
+    public:
+        static TStream& stream(TStream& stream, const char* value) noexcept {
+            stream << '\"' << value << '\"';
+            return stream;
+        }
+    };
+
+    template <class T, class TStream> class Stream_SFINAE_1<T, TStream, std::enable_if_t<std::is_same_v<std::string, T>>> {
+    public:
+        static TStream& stream(TStream& stream, const T& value) noexcept {
+            stream << '\"' << value << '\"';
+            return stream;
+        }
+    };
+
     template <class T, class TStream, class = void> class Stream: public StreamBase<T> {
     public:
         using StreamBase<T>::StreamBase;

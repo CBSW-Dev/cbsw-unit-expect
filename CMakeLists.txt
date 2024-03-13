@@ -5,7 +5,7 @@ if ("${CMAKE_SOURCE_DIR}" STREQUAL "${CMAKE_BINARY_DIR}")
   message(SEND_ERROR "In-source builds are not allowed.")
 endif ()
 
-project(CBSW_Unit_Expect VERSION 1.0.0)
+project(CBSW_Unit_Expect VERSION 1.0.1)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
