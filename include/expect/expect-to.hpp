@@ -6,10 +6,10 @@
 #include "expect-to-equal.hpp"
 #include "include/expect-to-include.hpp"
 
-namespace CBSW::Unit::Expect::Internal {
-    template <class TActual, class TLogic> class To {
+namespace CBSW::Unit::Expect {
+    template <class TActual, class TLogic> class ToBase {
     public:
-        To(const Info<TActual>& info) noexcept:
+        ToBase(const Info<TActual>& info) noexcept:
             be(info),
             _info(info)
         {}
@@ -23,7 +23,12 @@ namespace CBSW::Unit::Expect::Internal {
         }
 
         ToBe<TActual, TLogic> be;
-    private:
+    protected:
         const Info<TActual>& _info;
+    };
+
+    template <class TActual, class TLogic, class = void> class To: public ToBase<TActual, TLogic> {
+    public:
+       using ToBase<TActual, TLogic>::ToBase;
     };
 }

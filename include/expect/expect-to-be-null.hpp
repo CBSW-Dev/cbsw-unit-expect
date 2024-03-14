@@ -7,7 +7,7 @@
 #include "expect-to-be-less-than.hpp"
 #include "expect-to-be-less-than-or-equal.hpp"
 
-namespace CBSW::Unit::Expect::Internal {
+namespace CBSW::Unit::Expect {
     namespace {
         template <class TActual, class TLogic> class NotNullableExceptionMessageBuilder {
         public:

@@ -1,7 +1,7 @@
 #include "pch.hpp"
 #include "expect/expect-logic.hpp"
 
-namespace CBSW::Unit::Expect::Internal {
+namespace CBSW::Unit::Expect {
     bool Logic::logic(bool value) noexcept {
         return value;
     }

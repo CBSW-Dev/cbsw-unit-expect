@@ -10,10 +10,10 @@
 #include "expect-to-be-boolean.hpp"
 #include "expect-to-be-truthy.hpp"
 
-namespace CBSW::Unit::Expect::Internal {
-    template <class TActual, class TLogic> class ToBe {
+namespace CBSW::Unit::Expect {
+    template <class TActual, class TLogic> class ToBeBase {
     public:
-        ToBe(const Info<TActual>& info) noexcept:
+        ToBeBase(const Info<TActual>& info) noexcept:
             _info(info)
         {}
 
@@ -52,7 +52,12 @@ namespace CBSW::Unit::Expect::Internal {
         void falsy() {
             return ToBeTruthy<TActual, TLogic>::run(_info, false);
         }
-    private:
+    protected:
         const Info<TActual>& _info;
+    };
+
+    template <class TActual, class TLogic, class = void> class ToBe: public ToBeBase<TActual, TLogic> {
+    public:
+        using ToBeBase<TActual, TLogic>::ToBeBase;
     };
 }

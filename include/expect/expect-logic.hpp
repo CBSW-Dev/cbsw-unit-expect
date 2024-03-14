@@ -2,7 +2,7 @@
 
 #include <string>
 
-namespace CBSW::Unit::Expect::Internal {
+namespace CBSW::Unit::Expect {
     class Logic {
     public:
         static bool logic(bool value) noexcept;

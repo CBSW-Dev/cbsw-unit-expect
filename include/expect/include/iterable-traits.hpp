@@ -1,7 +1,7 @@
 #pragma once
 #include <type_traits>
 
-namespace CBSW::Unit::Expect::Internal {
+namespace CBSW::Unit::Expect {
     namespace {
         template <class T, class = void> struct IterableTraits_HasBeginAndEnd: std::false_type {};
         template <class T> struct IterableTraits_HasBeginAndEnd<T, std::enable_if_t<

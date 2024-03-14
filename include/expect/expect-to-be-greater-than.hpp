@@ -2,7 +2,7 @@
 
 #include "expect-binary-operator.hpp"
 
-namespace CBSW::Unit::Expect::Internal {
+namespace CBSW::Unit::Expect {
     namespace {
         class GreaterThanOperator {
         public:
@@ -21,5 +21,5 @@ namespace CBSW::Unit::Expect::Internal {
         const std::string GreaterThanOperator::symbol = ">";
     }
 
-    template <class TActual, class TExpected, class TLogic> using ToBeGreaterThan = BinaryOperator<TActual, TExpected, TLogic, GreaterThanOperator>;
+    template <class TActual, class TExpected, class TLogic, class = void> class ToBeGreaterThan: public BinaryOperator<TActual, TExpected, TLogic, GreaterThanOperator> {};
 }

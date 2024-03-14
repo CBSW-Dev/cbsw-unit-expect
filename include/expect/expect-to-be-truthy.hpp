@@ -7,7 +7,7 @@
 #include "expect-logic.hpp"
 
 #include <sstream>
-namespace CBSW::Unit::Expect::Internal {
+namespace CBSW::Unit::Expect {
     namespace {
         template <class TActual, class TLogic> class NotTruthyExceptionMessageBuilder {
         public:

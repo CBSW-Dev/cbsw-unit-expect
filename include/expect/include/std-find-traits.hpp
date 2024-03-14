@@ -1,7 +1,7 @@
 #pragma once
 #include <type_traits>
 
-namespace CBSW::Unit::Expect::Internal {
+namespace CBSW::Unit::Expect {
     template <class TActual, class TExpected, class = void> struct HasStdFind: std::false_type {};
 
     //std::find works by iterating from begin to end, and perform *it == end on the iterator,

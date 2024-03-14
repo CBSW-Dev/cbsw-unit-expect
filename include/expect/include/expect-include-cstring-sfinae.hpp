@@ -6,7 +6,7 @@
 #include <type_traits>
 #include <cstring>
 
-namespace CBSW::Unit::Expect::Internal {
+namespace CBSW::Unit::Expect {
 
 
     template <class TActual, class TExpected, class TLogic, class = void> class ToIncludeCString_SFINAE {

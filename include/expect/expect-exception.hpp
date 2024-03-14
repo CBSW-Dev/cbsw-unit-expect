@@ -3,7 +3,7 @@
 
 #include "expect-info.hpp"
 
-namespace CBSW::Unit::Expect::Internal {
+namespace CBSW::Unit::Expect {
     template <class TActual, class TExpected, class TLogic, class TMessageBuilder>
     class ExpectException: public ::CBSW::Unit::Exception {
     public:

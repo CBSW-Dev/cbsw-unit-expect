@@ -7,7 +7,7 @@
 #include <type_traits>
 #include <cstring>
 
-namespace CBSW::Unit::Expect::Internal {
+namespace CBSW::Unit::Expect {
     template <class TActual, class TExpected, class TLogic, class = void> class ToIncludeString_SFINAE {
     public:
         static void run(const Info<TActual>& info, const TExpected& expected) {

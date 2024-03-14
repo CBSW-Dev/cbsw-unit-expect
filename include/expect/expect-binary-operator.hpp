@@ -9,7 +9,7 @@
 #include <sstream>
 #include <type_traits>
 
-namespace CBSW::Unit::Expect::Internal {
+namespace CBSW::Unit::Expect {
     namespace {
         template <class TActual, class TExpected, class TLogic, class TOperator> class BinaryOperatorExceptionMessageBuilder {
         public:

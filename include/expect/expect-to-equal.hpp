@@ -2,7 +2,7 @@
 
 #include "expect-binary-operator.hpp"
 
-namespace CBSW::Unit::Expect::Internal {
+namespace CBSW::Unit::Expect {
     namespace {
         class EqualsOperator {
         public:
@@ -21,5 +21,5 @@ namespace CBSW::Unit::Expect::Internal {
         const std::string EqualsOperator::symbol = "==";
     }
 
-    template <class TActual, class TExpected, class TLogic> using ToEqual = BinaryOperator<TActual, TExpected, TLogic, EqualsOperator>;
+    template <class TActual, class TExpected, class TLogic, class = void> class ToEqual: public BinaryOperator<TActual, TExpected, TLogic, EqualsOperator> {};
 }

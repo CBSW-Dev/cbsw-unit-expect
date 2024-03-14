@@ -7,7 +7,7 @@
 
 #include <sstream>
 
-namespace CBSW::Unit::Expect::Internal {
+namespace CBSW::Unit::Expect {
     template <class TActual, class TExpected, class TLogic> class NotFoundExceptionMessageBuilder {
     public:
         static std::string build(const TActual& actual, const TExpected& expected) {

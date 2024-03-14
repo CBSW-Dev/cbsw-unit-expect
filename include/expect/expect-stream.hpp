@@ -3,7 +3,7 @@
 #include <sstream>
 #include <type_traits>
 
-namespace CBSW::Unit::Expect::Internal {
+namespace CBSW::Unit::Expect {
     template <class T> class StreamBase {
     public:
         StreamBase(const T& value):
@@ -81,6 +81,6 @@ namespace CBSW::Unit::Expect::Internal {
     };
 }
 
-template <class T, class TStream> TStream& operator << (TStream& stream, const ::CBSW::Unit::Expect::Internal::Stream<T, TStream>& value) {
+template <class T, class TStream> TStream& operator << (TStream& stream, const ::CBSW::Unit::Expect::Stream<T, TStream>& value) {
     return value.stream(stream);
 }

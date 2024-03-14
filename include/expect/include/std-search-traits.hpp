@@ -1,7 +1,7 @@
 #pragma once
 #include <type_traits>
 
-namespace CBSW::Unit::Expect::Internal {
+namespace CBSW::Unit::Expect {
     template <class TActual, class TExpected, class = void> struct HasStdSearch: std::false_type {};
 
     //std::serach works by iterating from begin to end (and s_begin to s_end), and perform *it == *s_it on the iterators,

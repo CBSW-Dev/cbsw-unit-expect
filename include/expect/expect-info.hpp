@@ -2,7 +2,7 @@
 #include <cbsw-unit>
 
 
-namespace CBSW::Unit::Expect::Internal {
+namespace CBSW::Unit::Expect {
     template <class TActual> class Info {
     public:
         using Filename = const char*;

@@ -5,7 +5,7 @@
 
 #include <type_traits>
 
-namespace CBSW::Unit::Expect::Internal {
+namespace CBSW::Unit::Expect {
     template <class TActual, class TExpected, class TLogic, class = void> class ToIncludeArray_SFINAE {
     public:
         static void run(const Info<TActual>& info, const TExpected& expected) {

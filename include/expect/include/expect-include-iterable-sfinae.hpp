@@ -11,7 +11,7 @@
 #include <string>
 #include <functional>
 
-namespace CBSW::Unit::Expect::Internal {
+namespace CBSW::Unit::Expect {
     //No valid iterable
     template <class TActual, class TExpected, class TLogic, class = void> class ToIncludeIterable_SFINAE_1 {
     public:
