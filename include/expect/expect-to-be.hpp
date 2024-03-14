@@ -7,7 +7,8 @@
 #include "expect-to-be-less-than.hpp"
 #include "expect-to-be-less-than-or-equal.hpp"
 #include "expect-to-be-null.hpp"
-
+#include "expect-to-be-boolean.hpp"
+#include "expect-to-be-truthy.hpp"
 
 namespace CBSW::Unit::Expect::Internal {
     template <class TActual, class TLogic> class ToBe {
@@ -34,6 +35,22 @@ namespace CBSW::Unit::Expect::Internal {
 
         void null() {
             return ToBeNull<TActual, TLogic>::run(_info);
+        }
+
+        void booleanTrue() {
+            return ToBeBoolean<TActual, TLogic>::run(_info, true);
+        }
+
+        void booleanFalse() {
+            return ToBeBoolean<TActual, TLogic>::run(_info, false);
+        }
+
+        void truthy() {
+            return ToBeTruthy<TActual, TLogic>::run(_info, true);
+        }
+
+        void falsy() {
+            return ToBeTruthy<TActual, TLogic>::run(_info, false);
         }
     private:
         const Info<TActual>& _info;
