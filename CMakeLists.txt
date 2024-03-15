@@ -20,7 +20,14 @@ configure_file(${CBSW_UNIT_EXPECT_SOURCE_DIRECTORY}/version.hpp.in src/settings/
 add_library(cbsw-unit-expect)
 
 option(CBSW_UNIT_BUILD_EXAMPLES "" OFF)
+
+
+option(CBSW_UNIT_EXPECT_EXTERNAL_DEPENDENCIES "are the uuid library's dependencies being built externally" OFF)
+
+if(NOT CBSW_UNIT_EXPECT_EXTERNAL_DEPENDENCIES)
 add_subdirectory(${CBSW_UNIT_EXPECT_DEPENDENCIES_DIRECTORY}/cbsw-unit cbsw-unit)
+endif()
+
 
 add_subdirectory(${CBSW_UNIT_EXPECT_SOURCE_DIRECTORY})
 
