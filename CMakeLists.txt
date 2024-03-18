@@ -25,7 +25,6 @@ add_library(cbsw-unit-expect)
 
 option(CBSW_UNIT_BUILD_EXAMPLES "" OFF)
 
-
 if(NOT DEFINED CBSW_UNIT_INCLUDED)
 add_subdirectory(${CBSW_UNIT_EXPECT_DEPENDENCIES_DIRECTORY}/cbsw-unit cbsw-unit)
 endif()
