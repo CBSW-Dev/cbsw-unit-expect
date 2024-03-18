@@ -1,6 +1,5 @@
 cmake_minimum_required(VERSION 3.10)
 
-
 if ("${CMAKE_SOURCE_DIR}" STREQUAL "${CMAKE_BINARY_DIR}")
   message(SEND_ERROR "In-source builds are not allowed.")
 endif ()
@@ -27,7 +26,6 @@ option(CBSW_UNIT_BUILD_EXAMPLES "" OFF)
 if(NOT DEFINED CBSW_UNIT_INCLUDED)
 add_subdirectory(${CBSW_UNIT_EXPECT_DEPENDENCIES_DIRECTORY}/cbsw-unit cbsw-unit)
 endif()
-
 
 add_subdirectory(${CBSW_UNIT_EXPECT_SOURCE_DIRECTORY})
 
