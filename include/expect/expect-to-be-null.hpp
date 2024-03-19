@@ -48,8 +48,8 @@ namespace CBSW::Unit::Expect {
         }
     };
 
-    //can be statically cast to a void*
-    template <class TActual, class TLogic> class ToBeNull<TActual, TLogic, std::void_t<decltype(static_cast<void*>(std::declval<std::remove_cv_t<TActual>>()))>> {
+    //is a pointer
+    template <class TActual, class TLogic> class ToBeNull<TActual, TLogic, std::enable_if_t<std::is_pointer_v<TActual>>> {
     public:
         static void run(const Info<TActual>& info) {
             if (TLogic::logic(!(static_cast<const void*>(info.actual) == nullptr))) {
